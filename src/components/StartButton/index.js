@@ -3,7 +3,7 @@ import {Text, StyleSheet} from 'react-native';
 import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
 import LinearGradient from 'react-native-linear-gradient';
 
-import {Typography, LinearGradientTemplate} from 'styles';
+import {Typography, Color, LinearGradientTemplate} from 'styles';
 
 const StartButton = ({text, onPress}) => {
   return (
@@ -37,9 +37,9 @@ const styles = StyleSheet.create({
   getStartText: {
     margin: 10,
     fontSize: 25,
-    fontFamily: Typography.fontBold,
+    fontFamily: Typography.bold,
     textAlign: 'center',
-    color: Typography.textColor,
+    color: Color.textColor,
   },
 });
 

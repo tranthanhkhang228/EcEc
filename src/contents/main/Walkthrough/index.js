@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 
-import {Typography} from 'styles';
+import {Typography, Color} from 'styles';
 import {CustomButton} from '@components';
 
 const NUMBER_OF_SCREEN = 3;
@@ -32,16 +32,12 @@ const Walkthrough = ({navigation}) => {
       i !== currentStep
         ? stepIcons.push(
             <View key={i} style={styles.stepItem}>
-              <Icon
-                name="aliwangwang-o1"
-                color={Typography.textColor}
-                size={20}
-              />
+              <Icon name="aliwangwang-o1" color={Color.textColor} size={20} />
             </View>,
           )
         : stepIcons.push(
             <View key={i} style={styles.stepItem}>
-              <Icon name="aliwangwang" color={Typography.textColor} size={20} />
+              <Icon name="aliwangwang" color={Color.textColor} size={20} />
             </View>,
           );
     }
@@ -80,20 +76,21 @@ const Walkthrough = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: 'black',
   },
 
   walkthroughTitle: {
     marginBottom: 5,
-    color: Typography.textColor,
+    color: Color.textColor,
     fontSize: 35,
-    fontFamily: Typography.fontBold,
+    fontFamily: Typography.bold,
     textAlign: 'center',
   },
   walkthroughContent: {
     marginBottom: 40,
-    color: Typography.textColor,
+    color: Color.textColor,
     fontSize: 30,
-    fontFamily: Typography.fontMedium,
+    fontFamily: Typography.medium,
     textAlign: 'center',
   },
 

@@ -3,7 +3,7 @@ import {Text, StyleSheet} from 'react-native';
 import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/AntDesign';
 
-import {Typography} from 'styles';
+import {Typography, Color} from 'styles';
 
 const NextButton = ({text, onPress}) => {
   return (
@@ -11,7 +11,7 @@ const NextButton = ({text, onPress}) => {
       <Text style={styles.nextBtnText}>{text}</Text>
 
       <Text style={styles.nextBtnIcon}>
-        <Icon name="arrowright" color={Typography.textColor} size={25} />
+        <Icon name="arrowright" color={Color.textColor} size={25} />
       </Text>
     </TouchableWithoutFeedback>
   );
@@ -28,16 +28,16 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
 
     borderWidth: 1.5,
-    borderColor: Typography.textColor,
+    borderColor: Color.textColor,
     borderRadius: 30,
   },
 
   nextBtnText: {
     margin: 10,
     fontSize: 20,
-    fontFamily: Typography.fontMedium,
+    fontFamily: Typography.medium,
     textAlign: 'center',
-    color: Typography.textColor,
+    color: Color.textColor,
   },
 
   nextBtnIcon: {

@@ -1,10 +1,15 @@
 export const Typography = {
-  fontThin: 'Montserrat-Thin',
-  fontLight: 'Montserrat-Light',
-  fontRegular: 'Montserrat-Regular',
-  fontMedium: 'Montserrat-Medium',
-  fontBold: 'Montserrat-Bold',
-  textColor: '#fafffa',
+  thin: 'Montserrat-Thin',
+  light: 'Montserrat-Light',
+  regular: 'Montserrat-Regular',
+  medium: 'Montserrat-Medium',
+  bold: 'Montserrat-Bold',
+  size: 20,
+};
+
+export const Color = {
+  textColor: '#ecf0f1',
+  backgroundColor: '#fa8231',
 };
 
 export const LinearGradientTemplate = {
