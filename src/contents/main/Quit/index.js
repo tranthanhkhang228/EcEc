@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   BackHandler,
 } from 'react-native';
+import IconMCI from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Typography, Color} from '@styles';
 
 const quitGameText =
@@ -25,9 +26,15 @@ const QuitScreen = ({navigation}) => {
       <Text style={styles.text}>{quitGameText}</Text>
       <View style={styles.btnContainer}>
         <TouchableOpacity onPress={keepFighting} style={styles.keepFightingBtn}>
+          <View style={styles.btnIcon}>
+            <IconMCI name="sword-cross" color="white" size={18} />
+          </View>
           <Text style={styles.btnText}>Keep fighting!</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={quit} style={styles.quitBtn}>
+          <View style={styles.btnIcon}>
+            <IconMCI name="exit-run" color="white" size={18} />
+          </View>
           <Text style={styles.btnText}>Quit!</Text>
         </TouchableOpacity>
       </View>
@@ -36,9 +43,11 @@ const QuitScreen = ({navigation}) => {
 };
 
 const btn = {
-  padding: 10,
+  flexDirection: 'row',
+  paddingVertical: 7,
+  paddingHorizontal: 15,
   borderRadius: 10,
-  backgroundColor: Color.orange,
+  backgroundColor: 'rgba(247, 149, 2,0.9)',
 };
 
 const styles = StyleSheet.create({
@@ -50,8 +59,8 @@ const styles = StyleSheet.create({
 
   text: {
     marginBottom: 20,
-
-    fontSize: Typography.size,
+    fontFamily: Typography.regular,
+    fontSize: 18,
     color: Color.white,
     lineHeight: 30,
     textAlign: 'center',
@@ -63,8 +72,14 @@ const styles = StyleSheet.create({
   },
 
   btnText: {
+    fontFamily: Typography.light,
     fontSize: Typography.size,
     color: Color.white,
+  },
+
+  btnIcon: {
+    justifyContent: 'center',
+    marginRight: 7,
   },
 
   keepFightingBtn: {
