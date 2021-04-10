@@ -32,12 +32,12 @@ const Walkthrough = ({navigation}) => {
       i !== currentStep
         ? stepIcons.push(
             <View key={i} style={styles.stepItem}>
-              <Icon name="aliwangwang-o1" color={Color.text} size={20} />
+              <Icon name="aliwangwang-o1" color={Color.white} size={20} />
             </View>,
           )
         : stepIcons.push(
             <View key={i} style={styles.stepItem}>
-              <Icon name="aliwangwang" color={Color.text} size={20} />
+              <Icon name="aliwangwang" color={Color.white} size={20} />
             </View>,
           );
     }
@@ -57,7 +57,7 @@ const Walkthrough = ({navigation}) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar animated={true} backgroundColor={Color.background} />
+      <StatusBar animated={true} backgroundColor={Color.orange} />
 
       <Text style={styles.walkthroughTitle}>{articles[currentStep].title}</Text>
       <Text style={styles.walkthroughContent}>
@@ -83,14 +83,14 @@ const styles = StyleSheet.create({
 
   walkthroughTitle: {
     marginBottom: 5,
-    color: Color.text,
+    color: Color.white,
     fontSize: 35,
     fontFamily: Typography.bold,
     textAlign: 'center',
   },
   walkthroughContent: {
     marginBottom: 40,
-    color: Color.text,
+    color: Color.white,
     fontSize: 30,
     fontFamily: Typography.medium,
     textAlign: 'center',

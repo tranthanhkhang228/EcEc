@@ -30,7 +30,7 @@ const Stage = ({order, realm, percent, point, content, customStyles}) => {
                   {point}
                 </Text>
                 <View style={styles.stageBodyIcon}>
-                  <Icon size={20} name="star" color={Color.background} />
+                  <Icon size={20} name="star" color={Color.orange} />
                 </View>
               </View>
             </View>
@@ -41,7 +41,7 @@ const Stage = ({order, realm, percent, point, content, customStyles}) => {
                 percent={parseInt(percent, 10)}
                 radius={50}
                 borderWidth={6}
-                color={Color.background}
+                color={Color.orange}
                 shadowColor="#999"
                 bgColor="#fff">
                 <Text style={styles.stagePercentText}>{percent} %</Text>
@@ -118,14 +118,14 @@ const styles = StyleSheet.create({
   stageHeaderText: {
     fontSize: 20,
     fontFamily: Typography.medium,
-    color: Color.background,
+    color: Color.orange,
     textAlign: 'center',
     paddingBottom: 20,
   },
 
   stageBody: {
     borderLeftWidth: 2,
-    borderLeftColor: Color.background,
+    borderLeftColor: Color.orange,
     paddingLeft: 15,
     marginBottom: 20,
   },
@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
   stageBodyIcon: {justifyContent: 'center'},
 
   stageBodyPointText: {
-    color: Color.background,
+    color: Color.orange,
   },
 
   stagePercent: {
@@ -158,6 +158,6 @@ const styles = StyleSheet.create({
   stagePercentText: {
     fontFamily: Typography.regular,
     fontSize: 20,
-    color: Color.background,
+    color: Color.orange,
   },
 });

@@ -182,13 +182,13 @@ const styles = StyleSheet.create({
 
     borderTopLeftRadius: 10,
     borderBottomLeftRadius: 10,
-    borderColor: Color.border,
+    borderColor: Color.orange,
     borderWidth: 1.5,
   },
 
   searchBoxIcon: {
     padding: 4,
-    backgroundColor: Color.background,
+    backgroundColor: Color.orange,
     borderBottomRightRadius: 10,
     borderTopRightRadius: 10,
   },

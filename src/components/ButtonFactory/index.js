@@ -2,6 +2,7 @@ import React from 'react';
 
 import StartButton from '../StartButton';
 import NextButton from '../NextButton';
+import NormalButton from '../NormalButton';
 
 const ButtonFactory = (props) => {
   const {type} = props;
@@ -9,8 +10,10 @@ const ButtonFactory = (props) => {
   switch (type) {
     case 'next':
       return <NextButton {...props} />;
-    default:
+    case 'start':
       return <StartButton {...props} />;
+    default:
+      return <NormalButton {...props} />;
   }
 };
 

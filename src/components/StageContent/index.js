@@ -10,7 +10,7 @@ const StageContent = ({name}) => {
     case 'error finding':
       return (
         <View style={styles.stageContent}>
-          <IconFA size={20} name="pencil-square-o" color={Color.background} />
+          <IconFA size={20} name="pencil-square-o" color={Color.orange} />
           <Text style={styles.stageContentText}>Error Finding</Text>
         </View>
       );
@@ -20,7 +20,7 @@ const StageContent = ({name}) => {
           <IconMat
             size={20}
             name="comment-processing-outline"
-            color={Color.background}
+            color={Color.orange}
           />
           <Text style={styles.stageContentText}>Dialogue</Text>
         </View>
@@ -28,7 +28,7 @@ const StageContent = ({name}) => {
     case 'minimal pairs':
       return (
         <View style={styles.stageContent}>
-          <IconSA size={17} name="earphones" color={Color.background} />
+          <IconSA size={17} name="earphones" color={Color.orange} />
           <Text style={{...styles.stageContentText, ...styles.stageListening}}>
             Minimal Pairs
           </Text>
@@ -40,7 +40,7 @@ const StageContent = ({name}) => {
           <IconMat
             size={20}
             name="feature-search-outline"
-            color={Color.background}
+            color={Color.orange}
           />
           <Text style={styles.stageContentText}>Speed Reading</Text>
         </View>
@@ -48,7 +48,7 @@ const StageContent = ({name}) => {
     case 'spelling':
       return (
         <View style={styles.stageContent}>
-          <IconFA size={20} name="pencil-square-o" color={Color.background} />
+          <IconFA size={20} name="pencil-square-o" color={Color.orange} />
           <Text style={styles.stageContentText}>Spelling</Text>
         </View>
       );
@@ -58,7 +58,7 @@ const StageContent = ({name}) => {
           <IconMat
             size={20}
             name="comment-processing-outline"
-            color={Color.background}
+            color={Color.orange}
           />
           <Text style={styles.stageContentText}>Topic Associations</Text>
         </View>
@@ -66,7 +66,7 @@ const StageContent = ({name}) => {
     case 'topic match':
       return (
         <View style={styles.stageContent}>
-          <IconSA size={17} name="earphones" color={Color.background} />
+          <IconSA size={17} name="earphones" color={Color.orange} />
           <Text style={{...styles.stageContentText, ...styles.stageListening}}>
             Topic Match
           </Text>
@@ -78,7 +78,7 @@ const StageContent = ({name}) => {
           <IconMat
             size={20}
             name="feature-search-outline"
-            color={Color.background}
+            color={Color.orange}
           />
           <Text style={styles.stageContentText}>Phrasal Verb</Text>
         </View>

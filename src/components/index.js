@@ -5,3 +5,4 @@ export {default as EquipmentDetail} from './EquipmentDetail';
 export {default as Angle} from './Angle';
 export {default as Stage} from './Stage';
 export {default as StageContent} from './StageContent';
+export {default as Input} from './Input';

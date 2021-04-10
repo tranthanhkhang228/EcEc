@@ -11,7 +11,7 @@ const NextButton = ({text, onPress}) => {
       <Text style={styles.nextBtnText}>{text}</Text>
 
       <Text style={styles.nextBtnIcon}>
-        <Icon name="arrowright" color={Color.text} size={25} />
+        <Icon name="arrowright" color={Color.white} size={25} />
       </Text>
     </TouchableWithoutFeedback>
   );
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
 
     borderWidth: 1.5,
-    borderColor: Color.text,
+    borderColor: Color.white,
     borderRadius: 30,
   },
 
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: Typography.medium,
     textAlign: 'center',
-    color: Color.text,
+    color: Color.white,
   },
 
   nextBtnIcon: {

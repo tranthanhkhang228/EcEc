@@ -1,16 +1,18 @@
 export const Typography = {
-  thin: 'Montserrat-Thin',
-  light: 'Montserrat-Light',
-  regular: 'Montserrat-Regular',
-  medium: 'Montserrat-Medium',
-  bold: 'Montserrat-Bold',
+  thin: 'MontserratAlternates-Thin',
+  light: 'MontserratAlternates-Light',
+  regular: 'MontserratAlternates-Regular',
+  medium: 'MontserratAlternates-Medium',
+  semiBold: 'MontserratAlternates-SemiBold',
+  bold: 'MontserratAlternates-Bold',
   size: 20,
 };
 
 export const Color = {
-  text: '#ecf0f1',
-  background: '#fa8231',
-  border: '#fa8231',
+  orange: '#f79502',
+  white: '#ecf0f1',
+  blue: '#1aa2eb',
+  gray: '#474747',
 };
 
 export const LinearGradientTemplate = {

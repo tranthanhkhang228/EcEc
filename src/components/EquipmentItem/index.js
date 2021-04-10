@@ -10,14 +10,14 @@ const EquipmentItem = ({title, onPress}) => {
     <TouchableWithoutFeedback onPress={onPress}>
       <View style={styles.item}>
         <Angle
-          color={Color.background}
+          color={Color.orange}
           width={20}
           height={20}
           direction="bottomleft"
         />
         <Text style={styles.vocabulary}>{title}</Text>
         <Text style={styles.class}> C1 </Text>
-        <Icon size={20} name="sword" color={Color.background} />
+        <Icon size={20} name="sword" color={Color.orange} />
       </View>
     </TouchableWithoutFeedback>
   );
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     // backgroundColor: 'red',
     borderBottomWidth: 1.5,
-    borderBottomColor: Color.background,
+    borderBottomColor: Color.orange,
   },
 
   vocabulary: {
