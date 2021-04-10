@@ -38,7 +38,7 @@ const QuitScreen = ({navigation}) => {
 const btn = {
   padding: 10,
   borderRadius: 10,
-  backgroundColor: Color.backgroundColor,
+  backgroundColor: Color.background,
 };
 
 const styles = StyleSheet.create({
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
 
     fontSize: Typography.size,
-    color: Color.textColor,
+    color: Color.text,
     lineHeight: 30,
     textAlign: 'center',
   },
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
 
   btnText: {
     fontSize: Typography.size,
-    color: Color.textColor,
+    color: Color.text,
   },
 
   keepFightingBtn: {

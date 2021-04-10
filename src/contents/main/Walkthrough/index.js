@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {SafeAreaView, View, Text, StyleSheet, StatusBar} from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 
 import {Typography, Color} from 'styles';
@@ -32,12 +32,12 @@ const Walkthrough = ({navigation}) => {
       i !== currentStep
         ? stepIcons.push(
             <View key={i} style={styles.stepItem}>
-              <Icon name="aliwangwang-o1" color={Color.textColor} size={20} />
+              <Icon name="aliwangwang-o1" color={Color.text} size={20} />
             </View>,
           )
         : stepIcons.push(
             <View key={i} style={styles.stepItem}>
-              <Icon name="aliwangwang" color={Color.textColor} size={20} />
+              <Icon name="aliwangwang" color={Color.text} size={20} />
             </View>,
           );
     }
@@ -56,7 +56,9 @@ const Walkthrough = ({navigation}) => {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
+      <StatusBar animated={true} backgroundColor={Color.background} />
+
       <Text style={styles.walkthroughTitle}>{articles[currentStep].title}</Text>
       <Text style={styles.walkthroughContent}>
         {articles[currentStep].content}
@@ -69,7 +71,7 @@ const Walkthrough = ({navigation}) => {
         type={currentStep === 2 ? 'start' : 'next'}
         onPress={handlePressNextBtn}
       />
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -81,14 +83,14 @@ const styles = StyleSheet.create({
 
   walkthroughTitle: {
     marginBottom: 5,
-    color: Color.textColor,
+    color: Color.text,
     fontSize: 35,
     fontFamily: Typography.bold,
     textAlign: 'center',
   },
   walkthroughContent: {
     marginBottom: 40,
-    color: Color.textColor,
+    color: Color.text,
     fontSize: 30,
     fontFamily: Typography.medium,
     textAlign: 'center',

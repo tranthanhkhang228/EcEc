@@ -4,7 +4,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import {Launcher} from '@components';
+import {Launcher, EquipmentDetail} from '@components';
 import {
   Walkthrough,
   Equipment,
@@ -20,6 +20,21 @@ import {
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
+
+const EquipmentNavigator = () => (
+  <Stack.Navigator>
+    <Stack.Screen
+      name="Equipment"
+      component={Equipment}
+      options={{header: () => null}}
+    />
+    <Stack.Screen
+      name="EquipmentDetail"
+      component={EquipmentDetail}
+      options={{header: () => null}}
+    />
+  </Stack.Navigator>
+);
 
 const TabNavigator = () => (
   <Tab.Navigator
@@ -39,7 +54,7 @@ const TabNavigator = () => (
       inactiveTintColor: 'gray',
     }}>
     <Tab.Screen name="Journey" component={Journey} />
-    <Tab.Screen name="Equipment" component={Equipment} />
+    <Tab.Screen name="Equipment" component={EquipmentNavigator} />
     <Tab.Screen name="Foresight" component={Foresight} />
     <Tab.Screen name="Achievement" component={Achievement} />
   </Tab.Navigator>

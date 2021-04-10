@@ -8,8 +8,9 @@ export const Typography = {
 };
 
 export const Color = {
-  textColor: '#ecf0f1',
-  backgroundColor: '#fa8231',
+  text: '#ecf0f1',
+  background: '#fa8231',
+  border: '#fa8231',
 };
 
 export const LinearGradientTemplate = {

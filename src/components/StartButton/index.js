@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontFamily: Typography.bold,
     textAlign: 'center',
-    color: Color.textColor,
+    color: Color.text,
   },
 });
 
