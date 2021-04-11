@@ -6,3 +6,6 @@ export {default as Angle} from './Angle';
 export {default as Stage} from './Stage';
 export {default as StageContent} from './StageContent';
 export {default as Input} from './Input';
+export {default as Sound} from './Sound';
+export {default as Practice} from './Practice';
+export {default as Course} from './Course';

@@ -9,10 +9,12 @@ export const Typography = {
 };
 
 export const Color = {
-  orange: '#f79502',
+  orange: '#ff9e23',
   white: '#ecf0f1',
-  blue: '#1aa2eb',
+  blue: '#3598db',
   gray: '#474747',
+  green: '#1bbc9b',
+  grayBlue: '#e4e5ec',
 };
 
 export const LinearGradientTemplate = {

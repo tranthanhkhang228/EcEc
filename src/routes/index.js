@@ -3,12 +3,13 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import {Color, Typography} from 'styles';
 
-import {Launcher, EquipmentDetail} from '@components';
+import {Launcher, EquipmentDetail, Practice} from '@components';
 import {
   Walkthrough,
   Equipment,
-  Foresight,
+  Pronunciation,
   Achievement,
   Journey,
   Inventory,
@@ -36,6 +37,32 @@ const EquipmentNavigator = () => (
   </Stack.Navigator>
 );
 
+const PronunciationNavigator = () => (
+  <Stack.Navigator
+    screenOptions={{
+      headerStyle: {
+        backgroundColor: Color.orange,
+        height: 40,
+      },
+      headerTintColor: Color.white,
+      headerTitleStyle: {
+        fontFamily: Typography.medium,
+        color: Color.white,
+      },
+    }}>
+    <Stack.Screen
+      name="Pronunciation"
+      component={Pronunciation}
+      options={{header: () => null}}
+    />
+    <Stack.Screen
+      name="Practice"
+      component={Practice}
+      options={{title: 'Back'}}
+    />
+  </Stack.Navigator>
+);
+
 const TabNavigator = () => (
   <Tab.Navigator
     screenOptions={({route}) => ({
@@ -53,9 +80,9 @@ const TabNavigator = () => (
       activeTintColor: '#ee3f00',
       inactiveTintColor: 'gray',
     }}>
+    <Tab.Screen name="Pronunciation" component={PronunciationNavigator} />
     <Tab.Screen name="Journey" component={Journey} />
     <Tab.Screen name="Equipment" component={EquipmentNavigator} />
-    <Tab.Screen name="Foresight" component={Foresight} />
     <Tab.Screen name="Achievement" component={Achievement} />
   </Tab.Navigator>
 );
