@@ -2,7 +2,6 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Color, Typography} from 'styles';
 
 import {EquipmentDetail, Practice, GameIntroduction} from '@components';
@@ -18,6 +17,9 @@ import {
   Quit,
 } from '@screens';
 import {SignIn} from '@auths';
+
+import BottomTabs from './BottomTabs';
+import DrawerNav from './DrawerNav';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -96,52 +98,39 @@ const JourneyNavigator = () => (
 );
 
 const TabNavigator = () => (
-  <Tab.Navigator
-    screenOptions={({route}) => ({
-      tabBarIcon: () => {
-        let iconName = 'television';
-
-        if (route.name) {
-          iconName = 'movie-roll';
-        }
-
-        return <Icon name={iconName} color="white" size={30} />;
-      },
-    })}
-    tabBarOptions={{
-      activeTintColor: '#ee3f00',
-      inactiveTintColor: 'gray',
-    }}>
-    <Tab.Screen name="Journey" component={JourneyNavigator} />
-    <Tab.Screen name="Pronunciation" component={PronunciationNavigator} />
-    <Tab.Screen name="Equipment" component={EquipmentNavigator} />
-    <Tab.Screen name="Progress" component={Achievement} />
+  <Tab.Navigator tabBar={(props) => <BottomTabs {...props} />}>
+    <Tab.Screen name="Hành trình" component={JourneyNavigator} />
+    <Tab.Screen name="Phát âm" component={PronunciationNavigator} />
+    <Tab.Screen name="Từ điển" component={EquipmentNavigator} />
+    <Tab.Screen name="Tiến độ" component={Achievement} />
   </Tab.Navigator>
 );
 
 const DrawerNavigator = () => (
-  <Drawer.Navigator drawerPosition="right">
-    <Drawer.Screen name="Continue your Journey" component={TabNavigator} />
-    <Drawer.Screen name="Inventory" component={Inventory} />
-    <Drawer.Screen name="Become an Companion" component={Companion} />
-    <Drawer.Screen name="Message to Gods" component={Feedback} />
-    <Drawer.Screen name="Quit" component={Quit} />
+  <Drawer.Navigator
+    drawerContent={(props) => <DrawerNav {...props} />}
+    drawerPosition="right">
+    <Drawer.Screen name="Trang chủ" component={TabNavigator} />
+    <Drawer.Screen name="Cá nhân" component={Inventory} />
+    <Drawer.Screen name="Đăng ký làm đồng hành" component={Companion} />
+    <Drawer.Screen name="Góp ý" component={Feedback} />
+    <Drawer.Screen name="Thoát" component={Quit} />
   </Drawer.Navigator>
 );
 
 const RootStack = () => (
   <Stack.Navigator>
-    <Stack.Screen
+    {/* <Stack.Screen
       name="Walkthrough"
       component={Walkthrough}
       options={{header: () => null}}
-    />
+    /> */}
 
-    <Stack.Screen
+    {/* <Stack.Screen
       name="SignIn"
       component={SignIn}
       options={{header: () => null}}
-    />
+    /> */}
 
     <Stack.Screen
       name="Home"

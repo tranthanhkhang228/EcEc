@@ -3,7 +3,7 @@ import {View, Text, StyleSheet, TouchableWithoutFeedback} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import {Color, Typography} from 'styles';
-import {Angle} from '../Angle';
+import Angle from '../Angle';
 
 const EquipmentItem = ({title, onPress}) => {
   return (

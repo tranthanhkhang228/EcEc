@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Text, SafeAreaView, StyleSheet, FlatList} from 'react-native';
 import {Stage} from '@components';
+import {Color, Typography} from 'styles';
 
 const JourneyScreen = ({navigation}) => {
   const [stage, setStage] = useState([
@@ -50,7 +51,23 @@ const JourneyScreen = ({navigation}) => {
 
   return (
     <SafeAreaView style={styles.journeyContainer}>
-      <Text>Please choose a stage to start!</Text>
+      <Text style={styles.title}>Hành trình!</Text>
+      <Text style={styles.header}>Hãy chọn 1 chặng để bắt đầu!</Text>
+
+      <FlatList
+        style={styles.stageList}
+        horizontal
+        data={stage}
+        renderItem={({item}) => (
+          <Stage onPress={onPress} customStyles={styles.stage} {...item} />
+        )}
+        keyExtractor={(item) => item.order.toString()}
+        removeClippedSubviews={true}
+      />
+
+      <Text style={styles.header}>
+        Bắt đầu khi bạn đã hoàn thành hết giai đoạn 1!
+      </Text>
 
       <FlatList
         style={styles.stageList}
@@ -67,9 +84,23 @@ const JourneyScreen = ({navigation}) => {
 };
 
 const styles = StyleSheet.create({
-  // journeyContainer: {
-  //   padding: 25,
-  // },
+  title: {
+    fontSize: 25,
+    fontFamily: Typography.medium,
+    paddingHorizontal: 15,
+    paddingTop: 20,
+    paddingBottom: 10,
+    color: Color.blue,
+    textAlign: 'center',
+  },
+
+  header: {
+    fontSize: 15,
+    fontFamily: Typography.medium,
+    paddingHorizontal: 13,
+    paddingVertical: 10,
+    color: Color.orange,
+  },
 
   stage: {
     margin: 15,
