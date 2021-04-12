@@ -1,35 +1,28 @@
-import React, {useEffect} from 'react';
-import {ImageBackground, StyleSheet} from 'react-native';
+import React from 'react';
+import {ActivityIndicator, View, Text, StyleSheet} from 'react-native';
+import {Color, Typography} from 'styles';
 
-const launcherImage = '../../assets/images/Launcher.png';
-
-const Launcher = ({navigation}) => {
-  const performTimeConsumingTask = () => {
-    return new Promise((resolve) =>
-      setTimeout(() => {
-        resolve('result');
-      }, 100),
-    );
-  };
-
-  useEffect(() => {
-    (async () => {
-      const data = await performTimeConsumingTask();
-
-      if (data !== null) {
-        navigation.navigate('Walkthrough');
-      }
-    })();
-  }, []);
-
+const Launcher = () => {
   return (
-    <ImageBackground source={require(launcherImage)} style={styles.imgBg} />
+    <View style={styles.launcher}>
+      <Text style={styles.message}>Processing, please wait...!</Text>
+      <ActivityIndicator size={60} color={Color.orange} />
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  imgBg: {
+  launcher: {
     flex: 1,
+    justifyContent: 'center',
+  },
+
+  message: {
+    fontFamily: Typography.regular,
+    textAlign: 'center',
+    fontSize: 20,
+    marginBottom: 25,
+    color: Color.blue,
   },
 });
 

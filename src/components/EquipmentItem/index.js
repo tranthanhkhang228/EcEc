@@ -2,8 +2,8 @@ import React from 'react';
 import {View, Text, StyleSheet, TouchableWithoutFeedback} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import {Color} from 'styles';
-import {Angle} from '@components';
+import {Color, Typography} from 'styles';
+import {Angle} from '../Angle';
 
 const EquipmentItem = ({title, onPress}) => {
   return (
@@ -11,13 +11,15 @@ const EquipmentItem = ({title, onPress}) => {
       <View style={styles.item}>
         <Angle
           color={Color.orange}
-          width={20}
-          height={20}
+          width={13}
+          height={13}
           direction="bottomleft"
         />
         <Text style={styles.vocabulary}>{title}</Text>
         <Text style={styles.class}> C1 </Text>
-        <Icon size={20} name="sword" color={Color.orange} />
+        <View style={styles.icon}>
+          <Icon size={15} name="sword" color={Color.orange} />
+        </View>
       </View>
     </TouchableWithoutFeedback>
   );
@@ -26,9 +28,9 @@ const EquipmentItem = ({title, onPress}) => {
 const styles = StyleSheet.create({
   item: {
     flexDirection: 'row',
-    marginVertical: 10,
+    marginVertical: 13,
     // backgroundColor: 'red',
-    borderBottomWidth: 1.5,
+    borderBottomWidth: 0.3,
     borderBottomColor: Color.orange,
   },
 
@@ -38,9 +40,16 @@ const styles = StyleSheet.create({
     padding: 5,
     fontSize: 15,
     lineHeight: 15,
+    fontFamily: Typography.light,
   },
 
-  class: {},
+  class: {
+    fontFamily: Typography.light,
+  },
+
+  icon: {
+    justifyContent: 'center',
+  },
 });
 
 export default EquipmentItem;

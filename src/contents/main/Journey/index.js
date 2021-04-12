@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Text, SafeAreaView, StyleSheet, FlatList} from 'react-native';
 import {Stage} from '@components';
 
-const JourneyScreen = () => {
+const JourneyScreen = ({navigation}) => {
   const [stage, setStage] = useState([
     {
       order: 1,
@@ -44,6 +44,10 @@ const JourneyScreen = () => {
     },
   ]);
 
+  const onPress = () => {
+    navigation.navigate('Practice');
+  };
+
   return (
     <SafeAreaView style={styles.journeyContainer}>
       <Text>Please choose a stage to start!</Text>
@@ -52,8 +56,10 @@ const JourneyScreen = () => {
         style={styles.stageList}
         horizontal
         data={stage}
-        renderItem={({item}) => <Stage {...item} customStyles={styles.stage} />}
-        keyExtractor={(item) => item.order}
+        renderItem={({item}) => (
+          <Stage onPress={onPress} customStyles={styles.stage} {...item} />
+        )}
+        keyExtractor={(item) => item.order.toString()}
         removeClippedSubviews={true}
       />
     </SafeAreaView>

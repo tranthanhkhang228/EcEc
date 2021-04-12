@@ -9,3 +9,6 @@ export {default as Input} from './Input';
 export {default as Sound} from './Sound';
 export {default as Practice} from './Practice';
 export {default as Course} from './Course';
+export {default as GameIntroduction} from './GameIntroduction';
+export {default as DialogueBubble} from './DialogueBubble';
+export {default as DialogueChoice} from './DialogueChoice';

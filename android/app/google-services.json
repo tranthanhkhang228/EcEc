@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "411366445024",
+    "project_id": "ecec-89f2d",
+    "storage_bucket": "ecec-89f2d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:411366445024:android:5caa93f87e70e47e376585",
+        "android_client_info": {
+          "package_name": "com.ecec"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "411366445024-jil5l7ldk7jui6tbh9ju3kh9ngnvf7dv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTWonishEJy_295k3-0idK4TQOOZmdp44"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "411366445024-jil5l7ldk7jui6tbh9ju3kh9ngnvf7dv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

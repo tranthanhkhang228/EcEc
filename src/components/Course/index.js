@@ -1,6 +1,13 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/AntDesign';
-import {StyleSheet, Text, View, Dimensions, Image} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Dimensions,
+  Image,
+  TouchableWithoutFeedback,
+} from 'react-native';
 import DropShadow from 'react-native-drop-shadow';
 import {Color, Typography} from 'styles';
 
@@ -9,27 +16,29 @@ const marginRight = 20;
 const itemMaxWidth =
   (Dimensions.get('window').width - parentPadding * 2 - marginRight) / 2;
 
-const Course = ({title, point, image}) => {
+const Course = ({title, point, image, onPress}) => {
   return (
-    <View style={styles.course}>
-      <View style={styles.upper}>
-        <Text style={styles.title}>{title}</Text>
-        <View style={styles.pointContainer}>
-          <Text style={styles.pointText}>Điểm</Text>
-          <View style={styles.point}>
-            <Text style={styles.pointText}>{point}</Text>
-            <View style={styles.pointIcon}>
-              <Icon size={15} name="star" color={Color.orange} />
+    <TouchableWithoutFeedback onPress={onPress}>
+      <View style={styles.course}>
+        <View style={styles.upper}>
+          <Text style={styles.title}>{title}</Text>
+          <View style={styles.pointContainer}>
+            <Text style={styles.pointText}>Điểm</Text>
+            <View style={styles.point}>
+              <Text style={styles.pointText}>{point}</Text>
+              <View style={styles.pointIcon}>
+                <Icon size={15} name="star" color={Color.orange} />
+              </View>
             </View>
           </View>
         </View>
+        <DropShadow style={{...styles.shadow}}>
+          <View style={styles.lower}>
+            <Image source={image} style={styles.image} />
+          </View>
+        </DropShadow>
       </View>
-      <DropShadow style={{...styles.shadow}}>
-        <View style={styles.lower}>
-          <Image source={image} style={styles.image} />
-        </View>
-      </DropShadow>
-    </View>
+    </TouchableWithoutFeedback>
   );
 };
 

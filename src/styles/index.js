@@ -56,3 +56,55 @@ export const LinearGradientTemplate = {
 
   angleOrange: ['#ff8d18', '#ff3c4e', '#ff1a30'],
 };
+
+// Labels
+const baseLabelStyles = {
+  fontFamily: Typography.regular,
+  fontSize: 14,
+  padding: 5,
+  fill: Color.blue,
+  stroke: 'transparent',
+};
+
+const centeredLabelStyles = Object.assign(
+  {textAnchor: 'middle'},
+  baseLabelStyles,
+);
+
+// Strokes
+const strokeLinecap = 'round';
+const strokeLinejoin = 'round';
+
+// Put it all together...
+export const CustomChartTheme = {
+  // axis: Object.assign({
+  //   style: {
+  //     axis: {
+  //       fill: 'transparent',
+  //       stroke: '#2329de',
+  //       strokeWidth: 0.5,
+  //       strokeLinecap,
+  //       strokeLinejoin,
+  //     },
+  //     axisLabel: Object.assign({}, centeredLabelStyles, {
+  //       padding: 25,
+  //     }),
+  //     grid: {
+  //       fill: 'none',
+  //       stroke: 'red',
+  //       pointerEvents: 'painted',
+  //     },
+  //     tickLabels: baseLabelStyles,
+  //   },
+  // }),
+  bar: Object.assign({
+    style: {
+      data: {
+        fill: Color.blue,
+        padding: 8,
+        strokeWidth: 0,
+      },
+      labels: baseLabelStyles,
+    },
+  }),
+};

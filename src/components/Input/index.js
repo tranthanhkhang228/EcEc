@@ -40,7 +40,7 @@ const Input = ({
       <View style={styles.inputContainer}>
         <View style={styles.labelContainer}>
           {icon ? <View style={styles.labelIcon}>{icon}</View> : null}
-          <Text style={disable ? styles.labelEditting : styles.label}>
+          <Text style={!disable ? styles.labelEditting : styles.label}>
             {label}
           </Text>
         </View>
@@ -52,7 +52,7 @@ const Input = ({
           editable={disable}
           maxLength={maxText}
           style={
-            disable
+            !disable
               ? isEditting
                 ? {...styles.inputEditting, ...styles.isEditting}
                 : styles.inputEditting

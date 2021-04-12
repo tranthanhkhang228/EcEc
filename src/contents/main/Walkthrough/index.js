@@ -46,7 +46,7 @@ const Walkthrough = ({navigation}) => {
   };
 
   const navigateToHomeScreen = () => {
-    navigation.navigate('Home');
+    navigation.navigate('SignIn');
   };
 
   const handlePressNextBtn = () => {

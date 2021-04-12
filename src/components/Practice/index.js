@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View, FlatList} from 'react-native';
-import {Course} from '@components';
+import Course from '../Course';
 import {Color, Typography} from 'styles';
 
 const listenAndWrite = '../../assets/images/listen_and_write.jpg';
@@ -8,7 +8,7 @@ const reading = '../../assets/images/lion-reading.jpg';
 const vocubulary = '../../assets/images/vocabulary.jpg';
 const subtitle = '../../assets/images/title.png';
 
-const Practice = () => {
+const Practice = ({navigation}) => {
   const courses = [
     {
       id: 1,
@@ -36,6 +36,10 @@ const Practice = () => {
     },
   ];
 
+  const onPress = () => {
+    navigation.navigate('GameIntroduction');
+  };
+
   return (
     <View style={styles.practice}>
       <Text style={styles.title}>Chặng 1 | Khởi đầu</Text>
@@ -50,7 +54,12 @@ const Practice = () => {
         numColumns={2}
         data={courses}
         renderItem={({item}) => (
-          <Course title={item.title} point={item.point} image={item.image} />
+          <Course
+            onPress={onPress}
+            title={item.title}
+            point={item.point}
+            image={item.image}
+          />
         )}
         removeClippedSubviews={true}
       />

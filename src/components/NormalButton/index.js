@@ -1,18 +1,25 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableWithoutFeedback, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import DropShadow from 'react-native-drop-shadow';
 
 import {Typography, Color} from 'styles';
 
-const NormalButton = ({children, text}) => {
+const NormalButton = ({
+  onPress,
+  children,
+  text,
+  customView,
+  customText,
+  customIcon,
+}) => {
   return (
     <DropShadow style={{...styles.shadow}}>
-      <TouchableWithoutFeedback>
-        <View style={styles.btn}>
-          <Text style={styles.btnText}>{text}</Text>
-          <View style={styles.icon}>{children}</View>
+      <TouchableOpacity onPress={onPress}>
+        <View style={{...styles.btn, ...customView}}>
+          <Text style={{...styles.btnText, ...customText}}>{text}</Text>
+          <View style={{...styles.icon, ...customIcon}}>{children}</View>
         </View>
-      </TouchableWithoutFeedback>
+      </TouchableOpacity>
     </DropShadow>
   );
 };
@@ -46,8 +53,8 @@ const styles = StyleSheet.create({
 
   btnText: {
     margin: 10,
-    fontSize: 13,
-    fontFamily: Typography.light,
+    fontSize: 15,
+    fontFamily: Typography.regular,
     textAlign: 'center',
     color: Color.white,
   },

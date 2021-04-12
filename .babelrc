@@ -11,7 +11,8 @@
           "@screens": "./src/contents/main",
           "@styles": "./src/styles",
           "@routes": "./src/routes",
-          "@modals": "./src/contents/modal"
+          "@modals": "./src/contents/modal",
+          "@auths": "./src/contents/auth"
         }
       }
     ]

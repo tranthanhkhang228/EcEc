@@ -11,7 +11,7 @@ import {
 import Icon from 'react-native-vector-icons/AntDesign';
 
 import {EquipmentItem} from '@components';
-import {Color} from 'styles';
+import {Color, Typography} from 'styles';
 
 const title = 'Your Equipment';
 const slogan = "Let's get some powerful things!";
@@ -145,7 +145,9 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     borderTopLeftRadius: 999,
     borderBottomLeftRadius: 999,
-    backgroundColor: 'rgba(252, 130, 0, 0.6)',
+    borderTopRightRadius: 10,
+    borderBottomRightRadius: 10,
+    backgroundColor: Color.grayBlue,
   },
 
   // this class is a container to keep image small
@@ -168,8 +170,10 @@ const styles = StyleSheet.create({
   },
 
   headerText: {
-    color: 'white',
-    lineHeight: 20,
+    color: Color.blue,
+    fontSize: 14,
+    lineHeight: 25,
+    fontFamily: Typography.medium,
   },
 
   searchBox: {

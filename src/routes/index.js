@@ -5,7 +5,7 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Color, Typography} from 'styles';
 
-import {Launcher, EquipmentDetail, Practice} from '@components';
+import {EquipmentDetail, Practice, GameIntroduction} from '@components';
 import {
   Walkthrough,
   Equipment,
@@ -17,6 +17,7 @@ import {
   Feedback,
   Quit,
 } from '@screens';
+import {SignIn} from '@auths';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -63,6 +64,37 @@ const PronunciationNavigator = () => (
   </Stack.Navigator>
 );
 
+const JourneyNavigator = () => (
+  <Stack.Navigator
+    screenOptions={{
+      headerStyle: {
+        backgroundColor: Color.orange,
+        height: 40,
+      },
+      headerTintColor: Color.white,
+      headerTitleStyle: {
+        fontFamily: Typography.medium,
+        color: Color.white,
+      },
+    }}>
+    <Stack.Screen
+      name="Pronunciation"
+      component={Journey}
+      options={{header: () => null}}
+    />
+    <Stack.Screen
+      name="Practice"
+      component={Practice}
+      options={{title: 'Back'}}
+    />
+    <Stack.Screen
+      name="GameIntroduction"
+      component={GameIntroduction}
+      options={{title: 'Back'}}
+    />
+  </Stack.Navigator>
+);
+
 const TabNavigator = () => (
   <Tab.Navigator
     screenOptions={({route}) => ({
@@ -80,10 +112,10 @@ const TabNavigator = () => (
       activeTintColor: '#ee3f00',
       inactiveTintColor: 'gray',
     }}>
+    <Tab.Screen name="Journey" component={JourneyNavigator} />
     <Tab.Screen name="Pronunciation" component={PronunciationNavigator} />
-    <Tab.Screen name="Journey" component={Journey} />
     <Tab.Screen name="Equipment" component={EquipmentNavigator} />
-    <Tab.Screen name="Achievement" component={Achievement} />
+    <Tab.Screen name="Progress" component={Achievement} />
   </Tab.Navigator>
 );
 
@@ -97,7 +129,7 @@ const DrawerNavigator = () => (
   </Drawer.Navigator>
 );
 
-const StackNavigator = () => (
+const RootStack = () => (
   <Stack.Navigator>
     <Stack.Screen
       name="Walkthrough"
@@ -106,23 +138,14 @@ const StackNavigator = () => (
     />
 
     <Stack.Screen
+      name="SignIn"
+      component={SignIn}
+      options={{header: () => null}}
+    />
+
+    <Stack.Screen
       name="Home"
       component={DrawerNavigator}
-      options={{header: () => null}}
-    />
-  </Stack.Navigator>
-);
-
-const RootStack = () => (
-  <Stack.Navigator>
-    <Stack.Screen
-      name="Launcher"
-      component={Launcher}
-      options={{header: () => null}}
-    />
-    <Stack.Screen
-      name="Walkthrough"
-      component={StackNavigator}
       options={{header: () => null}}
     />
   </Stack.Navigator>

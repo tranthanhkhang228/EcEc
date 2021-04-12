@@ -1,61 +1,77 @@
 import React from 'react';
-import {StyleSheet, Text, View, Dimensions} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Dimensions,
+  TouchableWithoutFeedback,
+} from 'react-native';
 import {Typography, Color} from 'styles';
 import DropShadow from 'react-native-drop-shadow';
 import ProgressCircle from 'react-native-progress-circle';
 import Icon from 'react-native-vector-icons/AntDesign';
-import {StageContent} from '@components';
+import StageContent from '../StageContent';
 
 const stageMaxWidth = (Dimensions.get('window').width / 100) * 90;
 
-const Stage = ({order, realm, percent, point, content, customStyles}) => {
+const Stage = ({
+  order,
+  realm,
+  percent,
+  point,
+  content,
+  customStyles,
+  onPress,
+}) => {
   return (
-    <DropShadow style={{...styles.shadow, ...customStyles}}>
-      <View style={styles.stageContainer}>
-        <View style={styles.sectionHeader}>
-          <View style={styles.sectionHeaderLeft}>
-            <View style={styles.stageHeader}>
-              <Text style={styles.stageHeaderText}>
-                Stage {order} | {realm}
-              </Text>
-            </View>
-            <View style={styles.stageBody}>
-              <Text style={styles.stageBodyText}>Overall</Text>
-              <View style={styles.stageBodyPoint}>
-                <Text
-                  style={{
-                    ...styles.stageBodyText,
-                    ...styles.stageBodyPointText,
-                  }}>
-                  {point}
+    <TouchableWithoutFeedback onPress={onPress}>
+      <DropShadow style={{...styles.shadow, ...customStyles}}>
+        <View style={styles.stageContainer}>
+          <View style={styles.sectionHeader}>
+            <View style={styles.sectionHeaderLeft}>
+              <View style={styles.stageHeader}>
+                <Text style={styles.stageHeaderText}>
+                  Stage {order} | {realm}
                 </Text>
-                <View style={styles.stageBodyIcon}>
-                  <Icon size={20} name="star" color={Color.orange} />
+              </View>
+              <View style={styles.stageBody}>
+                <Text style={styles.stageBodyText}>Overall</Text>
+                <View style={styles.stageBodyPoint}>
+                  <Text
+                    style={{
+                      ...styles.stageBodyText,
+                      ...styles.stageBodyPointText,
+                    }}>
+                    {point}
+                  </Text>
+                  <View style={styles.stageBodyIcon}>
+                    <Icon size={20} name="star" color={Color.orange} />
+                  </View>
                 </View>
               </View>
             </View>
-          </View>
-          <View style={styles.sectionHeaderRight}>
-            <View style={styles.stagePercent}>
-              <ProgressCircle
-                percent={parseInt(percent, 10)}
-                radius={50}
-                borderWidth={6}
-                color={Color.orange}
-                shadowColor="#999"
-                bgColor="#fff">
-                <Text style={styles.stagePercentText}>{percent} %</Text>
-              </ProgressCircle>
+            <View style={styles.sectionHeaderRight}>
+              <View style={styles.stagePercent}>
+                <ProgressCircle
+                  percent={parseInt(percent, 10)}
+                  radius={50}
+                  borderWidth={6}
+                  color={Color.orange}
+                  shadowColor="#999"
+                  bgColor="#fff">
+                  <Text style={styles.stagePercentText}>{percent} %</Text>
+                </ProgressCircle>
+              </View>
             </View>
           </View>
+          <View style={styles.sectionFooter}>
+            {content.map((name, index) => (
+              <StageContent key={index} name={name} />
+            ))}
+          </View>
         </View>
-        <View style={styles.sectionFooter}>
-          {content.map((name, index) => (
-            <StageContent key={index} name={name} />
-          ))}
-        </View>
-      </View>
-    </DropShadow>
+      </DropShadow>
+    </TouchableWithoutFeedback>
   );
 };
 
