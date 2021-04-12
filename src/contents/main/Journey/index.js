@@ -45,8 +45,8 @@ const JourneyScreen = ({navigation}) => {
     },
   ]);
 
-  const onPress = () => {
-    navigation.navigate('Practice');
+  const onPress = (content) => {
+    navigation.navigate('Practice', {content});
   };
 
   return (
@@ -58,9 +58,16 @@ const JourneyScreen = ({navigation}) => {
         style={styles.stageList}
         horizontal
         data={stage}
-        renderItem={({item}) => (
-          <Stage onPress={onPress} customStyles={styles.stage} {...item} />
-        )}
+        renderItem={({item}) => {
+          const content = item.content;
+          return (
+            <Stage
+              onPress={() => onPress(content)}
+              customStyles={styles.stage}
+              {...item}
+            />
+          );
+        }}
         keyExtractor={(item) => item.order.toString()}
         removeClippedSubviews={true}
       />

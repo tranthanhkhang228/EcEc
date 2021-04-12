@@ -4,7 +4,12 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {Color, Typography} from 'styles';
 
-import {EquipmentDetail, Practice, GameIntroduction} from '@components';
+import {
+  EquipmentDetail,
+  Practice,
+  GameIntroduction,
+  GameFactory,
+} from '@components';
 import {
   Walkthrough,
   Equipment,
@@ -93,6 +98,11 @@ const JourneyNavigator = () => (
       name="GameIntroduction"
       component={GameIntroduction}
       options={{title: 'Back'}}
+    />
+    <Stack.Screen
+      name="Game"
+      component={GameFactory}
+      options={{header: () => null}}
     />
   </Stack.Navigator>
 );

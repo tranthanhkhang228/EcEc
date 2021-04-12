@@ -10,5 +10,8 @@ export {default as Sound} from './Sound';
 export {default as Practice} from './Practice';
 export {default as Course} from './Course';
 export {default as GameIntroduction} from './GameIntroduction';
+export {default as GameFactory} from './GameFactory';
 export {default as DialogueBubble} from './DialogueBubble';
 export {default as DialogueChoice} from './DialogueChoice';
+export {default as ActivityComplete} from './ActivityComplete';
+export {default as Result} from './Result';

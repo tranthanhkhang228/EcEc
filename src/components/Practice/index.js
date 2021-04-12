@@ -8,29 +8,29 @@ const reading = '../../assets/images/lion-reading.jpg';
 const vocubulary = '../../assets/images/vocabulary.jpg';
 const subtitle = '../../assets/images/title.png';
 
-const Practice = ({navigation}) => {
+const Practice = ({navigation, route}) => {
   const courses = [
     {
       id: 1,
-      title: 'Nghe-chép',
+      title: route.params.content[0],
       point: 0.0,
       image: require(listenAndWrite),
     },
     {
       id: 2,
-      title: 'Luyện đọc',
+      title: route.params.content[1],
       point: 4.0,
       image: require(reading),
     },
     {
       id: 3,
-      title: 'Từ vựng',
+      title: route.params.content[2],
       point: 7.3,
       image: require(vocubulary),
     },
     {
       id: 4,
-      title: 'Phụ đề',
+      title: route.params.content[3],
       point: 6.0,
       image: require(subtitle),
     },

@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 999,
     borderTopRightRadius: 10,
     borderBottomRightRadius: 10,
-    backgroundColor: Color.grayBlue,
+    backgroundColor: 'rgba(255, 158, 35, 0.2)',
   },
 
   // this class is a container to keep image small
@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
   },
 
   headerText: {
-    color: Color.blue,
+    color: Color.orange,
     fontSize: 14,
     lineHeight: 25,
     fontFamily: Typography.medium,

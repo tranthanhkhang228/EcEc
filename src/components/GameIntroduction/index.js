@@ -3,8 +3,10 @@ import {StyleSheet, Text, View} from 'react-native';
 import CustomButton from '../ButtonFactory';
 import {Color, Typography} from 'styles';
 
-const GameIntroduction = () => {
-  const onPress = () => {};
+const GameIntroduction = ({navigation}) => {
+  const onPress = () => {
+    navigation.navigate('Game', {type: 'dialogue'});
+  };
 
   return (
     <View style={styles.introduction}>
@@ -15,11 +17,11 @@ const GameIntroduction = () => {
         Trò chơi này giúp bạn trở nên tự tin hơn trong giao tiếp tiếng anh bằng
         cách sử dụng các đoạn nhắn tin online.
       </Text>
-      <Text style={styles.header}>Để làm gì:</Text>
+      <Text style={styles.header}>Sử dụng ở đâu:</Text>
       <Text style={styles.text}>
         Speaking Parts 1. Nó sẽ giúp bạn luyện tập kỹ năng hội thoại. Trong bài
         kiểm tra, bạn sẽ cần nói chuyện với Giám khảo về các chủ đề giao tiếp
-        quen thuộc và các chủ đề đơn giản về kiến thức xã hội.
+        quen thuộc cũng như các chủ đề đơn giản về kiến thức xã hội.
       </Text>
       <CustomButton text="Bắt đầu" onPress={onPress} />
     </View>
@@ -35,15 +37,17 @@ const styles = StyleSheet.create({
 
   title: {
     fontFamily: Typography.medium,
-    fontSize: 18,
+    fontSize: 20,
     textAlign: 'center',
     marginBottom: 40,
+    color: Color.blue,
   },
 
   topic: {
     fontFamily: Typography.semiBold,
     fontSize: 20,
     marginBottom: 15,
+    color: Color.gray,
   },
 
   header: {

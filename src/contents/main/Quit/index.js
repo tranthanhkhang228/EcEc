@@ -10,7 +10,7 @@ import IconMCI from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Typography, Color} from '@styles';
 
 const quitGameText =
-  'Do you really want to exit this world? \n You can return anytime!';
+  'Bạn muốn tạm thời dừng lại? \n Bạn có thể trở lại bất cứ lúc nào!';
 
 const QuitScreen = ({navigation}) => {
   const keepFighting = () => {
@@ -29,13 +29,13 @@ const QuitScreen = ({navigation}) => {
           <View style={styles.btnIcon}>
             <IconMCI name="sword-cross" color="white" size={18} />
           </View>
-          <Text style={styles.btnText}>Keep fighting!</Text>
+          <Text style={styles.btnText}>Tiếp tục!</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={quit} style={styles.quitBtn}>
           <View style={styles.btnIcon}>
             <IconMCI name="exit-run" color="white" size={18} />
           </View>
-          <Text style={styles.btnText}>Quit!</Text>
+          <Text style={styles.btnText}>Thoát!</Text>
         </TouchableOpacity>
       </View>
     </View>

@@ -6,12 +6,20 @@ import {Color, Typography} from 'styles';
 const DialogueChoice = ({options, onPress}) => {
   return (
     <View>
-      <Text style={styles.title}>TAP VÀO ĐÁP ÁN ĐÚNG</Text>
+      <View style={styles.decoration}>
+        <Text style={styles.title}>TAP VÀO ĐÁP ÁN ĐÚNG</Text>
+      </View>
       <View style={styles.bubbles}>
-        {options.map((option) => (
-          <DialogueBubble text={option.text} onPress={onPress} />
+        {options.map((option, index) => (
+          <DialogueBubble
+            key={option}
+            optionIndex={index}
+            text={option}
+            onPress={onPress}
+          />
         ))}
       </View>
+      <View style={styles.decoration} />
     </View>
   );
 };
@@ -25,6 +33,18 @@ const styles = StyleSheet.create({
     color: Color.white,
   },
   bubbles: {
-    backgroundColor: Color.gray,
+    backgroundColor: '#ff9e23',
+    paddingHorizontal: 20,
+    paddingTop: 20,
+    marginHorizontal: -20,
+  },
+
+  decoration: {
+    height: 35,
+    marginHorizontal: -20,
+
+    backgroundColor: 'rgba(255, 158, 35, 0.5)',
+    paddingHorizontal: 15,
+    justifyContent: 'center',
   },
 });

@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
   title: {
     color: Color.gray,
     fontFamily: Typography.medium,
-    fontSize: 15,
+    fontSize: 13,
     textAlign: 'center',
     marginBottom: 12,
   },
